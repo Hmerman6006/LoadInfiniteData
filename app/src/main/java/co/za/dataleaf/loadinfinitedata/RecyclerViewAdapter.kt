@@ -1,10 +1,6 @@
 package co.za.dataleaf.loadinfinitedata
 
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter

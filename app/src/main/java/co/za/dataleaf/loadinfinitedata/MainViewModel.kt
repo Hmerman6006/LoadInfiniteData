@@ -1,6 +1,5 @@
 package co.za.dataleaf.loadinfinitedata
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.channels.Channel
