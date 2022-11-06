@@ -36,6 +36,7 @@ class InfiniteScrollListener(
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
 
+        // Add negative scrolling to allow for subtracting items from list
         if (dy <= 0) return
 
         totalItemCount = mLayoutManager.itemCount

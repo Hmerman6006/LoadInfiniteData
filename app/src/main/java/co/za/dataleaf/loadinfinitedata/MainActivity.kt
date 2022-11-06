@@ -71,10 +71,11 @@ class MainActivity : AppCompatActivity() {
                             Log.d("MainActivity loadChannel", "SUCCESS  ... ${it.data?.size} ${adapter.currentList.size} ${adapter.getListItem(adapter.currentList.size)}")
                             binding.progressBar.visibility = View.GONE
                             if (it.data != null) {
-                                Log.d("MainActivity loadChannel", "SUCCESS  ... ${adapter.showData()?.size}")
+                                // Add data to existing list
+                                // is only needed if all loaded data should subsist. Better solution would be to keep
+                                // ListAdapter items at a fixed length and add negative scrolling to subtract items from list.
                                 adapter.setData(it.data)
                                 adapter.submitList(adapter.showData())
-                                Log.d("MainActivity loadChannel", "SUCCESS  ... ${adapter.showData()?.size}")
                                 binding.tvPageProgress.setText(mLayoutManager.itemCount.toString())
                             }
                             infiniteScrollListener.setLoaded()
@@ -91,15 +92,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun grabItem(item: InfiniteHolder) {
         Log.d("MainActivity", item.toString())
-    }
-    private fun setItemsData() {
-        val itemsCells = ArrayList<InfiniteHolder>()
-        for (i in 0..40) {
-            itemsCells.add(
-                InfiniteHolder(
-                    i.toLong(), "http://dataleaf.co.za", "Item $i"
-                )
-            )
-        }
     }
 }
