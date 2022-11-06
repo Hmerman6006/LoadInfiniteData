@@ -17,7 +17,7 @@ class MainViewModel: ViewModel() {
         viewModelScope.launch {
             _loadChannel.send(NetworkResource.loading(null))
             try {
-                delay(200L)
+                delay(2000L)
                 loadMoreItems = ArrayList()
                 val end = start + 16
                 for(i in start..end) {
